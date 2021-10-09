@@ -1,0 +1,1090 @@
+{
+  "1": {
+    "noa2_code": "1",
+    "description": "Cancellation. (Cancellation)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "2": {
+    "noa2_code": "2",
+    "description": "Correction.  (Correction)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "23": {
+    "noa2_code": "23",
+    "description": "LONGITUDINAL HISTORY FILE (LHF) RECORD MARKER",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "100": {
+    "segment": "Start Date",
+    "noa2_code": "100",
+    "description": "Career Appointment. (Career Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "101": {
+    "segment": "Start Date",
+    "noa2_code": "101",
+    "description": "Career-Conditional Appointment. (Career-Cond Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "107": {
+    "noa2_code": "107",
+    "description": "Emergency Appointment. (Emergency Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "108": {
+    "segment": "Start Date",
+    "noa2_code": "108",
+    "description": "Term Appointment Not-to-exceed  (date). (Term Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "115": {
+    "segment": "Start Date",
+    "noa2_code": "115",
+    "description": "Appointment Not-to-exceed  (date). (Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "120": {
+    "noa2_code": "120",
+    "description": "Overseas Limited Appointment. (O/S Ltd Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "122": {
+    "noa2_code": "122",
+    "description": "Overseas Limited Appointment Not-to-exceed (date). (O/S Ltd Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "124": {
+    "noa2_code": "124",
+    "description": "Appointment-Status Quo. (Appt-Status Quo)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "130": {
+    "segment": "Start Date",
+    "noa2_code": "130",
+    "description": "Transfer. (Transfer)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "132": {
+    "noa2_code": "132",
+    "description": "Mass Transfer. (Mass Transfer)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "140": {
+    "segment": "Start Date",
+    "noa2_code": "140",
+    "description": "Reinstatement-Career. (Reins-Career)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "141": {
+    "segment": "Start Date",
+    "noa2_code": "141",
+    "description": "Reinstatement-Career-Conditional. (Reins-Career-Cond)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "142": {
+    "noa2_code": "142",
+    "description": "Senior Executive Service Career Appointment. (SES Career Appt)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "143": {
+    "segment": "Start Date",
+    "noa2_code": "143",
+    "description": "Reinstatement-Senior Executive Service Career. (Reins-SES Career)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "145": {
+    "segment": "Start Date",
+    "noa2_code": "145",
+    "description": "Transfer-Senior Executive Service Career. (Transfer SES Career)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "146": {
+    "noa2_code": "146",
+    "description": "Senior Executive Service Noncareer Appointment. (SES Noncareer Appt)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "147": {
+    "noa2_code": "147",
+    "description": "Transfer-Senior Executive Service Noncareer. (Transfer SES Noncareer)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "148": {
+    "noa2_code": "148",
+    "description": "Senior Executive Service Limited Term Appointment Not-to-exceed (date). (SES Ltd Term Appt NTE (date))",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "149": {
+    "noa2_code": "149",
+    "description": "Senior Executive Service Limited Emergency Appointment Not-to-exceed (date). (SES Ltd Emergency Appt NTE (date))",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "170": {
+    "segment": "Start Date",
+    "noa2_code": "170",
+    "description": "Excepted Appointment. (Exc Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "171": {
+    "segment": "Start Date",
+    "noa2_code": "171",
+    "description": "Excepted Appointment Not-to-exceed (date). (Exc Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "190": {
+    "noa2_code": "190",
+    "description": "Provisional Appointment Not-to-exceed (date). (Provisional Appt NTE (date))",
+    "start_date": "4/1/1991",
+    "end_date": "Present"
+  },
+  "198": {
+    "noa2_code": "198",
+    "description": "Interim Appointment in Nonduty Status. (Interim Appt in Nonduty Status)",
+    "start_date": "1/1/1992",
+    "end_date": "Present"
+  },
+  "199": {
+    "noa2_code": "199",
+    "description": "Interim Appointment. (Interim Appt)",
+    "start_date": "1/1/1992",
+    "end_date": "Present"
+  },
+  "280": {
+    "segment": "Restart?",
+    "noa2_code": "280",
+    "description": "Placement in Pay Status. (Placement in Pay Status)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "292": {
+    "segment": "Restart?",
+    "noa2_code": "292",
+    "description": "Return to Duty. (RTD)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "293": {
+    "noa2_code": "293",
+    "description": "Return to Pay Status. (Return to Pay Status)",
+    "start_date": "1/1/1992",
+    "end_date": "Present"
+  },
+  "300": {
+    "segment": "Retirement",
+    "noa2_code": "300",
+    "description": "Retirement-Mandatory. (Retirement-Mandatory)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "301": {
+    "segment": "Retirement",
+    "noa2_code": "301",
+    "description": "Retirement-Disability. (Retirement-Disability)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "302": {
+    "segment": "Retirement",
+    "noa2_code": "302",
+    "description": "Retirement-Voluntary. (Retirement-Voluntary)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "303": {
+    "segment": "Retirement",
+    "noa2_code": "303",
+    "description": "Retirement-Special Option. (Retirement-Special Option)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "304": {
+    "noa2_code": "304",
+    "description": "Retirement-In Lieu of Involuntary Action. (Retirement-ILIA)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "307": {
+    "noa2_code": "307",
+    "description": "Full Retirement Status-Voluntary",
+    "start_date": "11/6/2014",
+    "end_date": "Present"
+  },
+  "308": {
+    "noa2_code": "308",
+    "description": "Full Retirement Status-ILIS",
+    "start_date": "11/6/2014",
+    "end_date": "Present"
+  },
+  "312": {
+    "noa2_code": "312",
+    "description": "Resignation-In Lieu of Involuntary Action. (Resignation-ILIA)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "317": {
+    "segment": "Negative Resignation",
+    "noa2_code": "317",
+    "description": "Resignation. (Resignation)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "330": {
+    "segment": "Postive Resignation",
+    "noa2_code": "330",
+    "description": "Removal. (Removal)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "350": {
+    "segment": "Retirement",
+    "noa2_code": "350",
+    "description": "Death. (Death)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "351": {
+    "noa2_code": "351",
+    "description": "Termination-Sponsor Relocating. (Termination-Sponsor Relocating)",
+    "start_date": "2/1/1987",
+    "end_date": "Present"
+  },
+  "352": {
+    "segment": "Neutral Resignation",
+    "noa2_code": "352",
+    "description": "Termination-Appointment in (agency). (Termination-Appt in (agency)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "353": {
+    "noa2_code": "353",
+    "description": "Separation-US.  (Separation-US)",
+    "start_date": "9/1/1995",
+    "end_date": "Present"
+  },
+  "354": {
+    "noa2_code": "354",
+    "description": "Death in the Line of Duty",
+    "start_date": "10/1/2013",
+    "end_date": "Present"
+  },
+  "355": {
+    "segment": "Neutral Resignation",
+    "noa2_code": "355",
+    "description": "Termination-Expiration of Appointment. (Termination-Exp of Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "356": {
+    "segment": "Neutral Resignation",
+    "noa2_code": "356",
+    "description": "Separation-RIF.  (Separation-RIF)",
+    "start_date": "10/1/1994",
+    "end_date": "Present"
+  },
+  "357": {
+    "segment": "Positive Resignation",
+    "noa2_code": "357",
+    "description": "Termination. (Termination)",
+    "start_date": "1/1/1979",
+    "end_date": "Present"
+  },
+  "385": {
+    "segment": "Positive Resignation",
+    "noa2_code": "385",
+    "description": "Termination during prob/trial period. (Termination during prob/trial period)",
+    "start_date": "10/1/1994",
+    "end_date": "Present"
+  },
+  "390": {
+    "noa2_code": "390",
+    "description": "Separation-Appt In (name of entity).  (Separation-Appt In (name of entity)",
+    "start_date": "3/1/1995",
+    "end_date": "Present"
+  },
+  "430": {
+    "segment": "Neutral Action",
+    "noa2_code": "430",
+    "description": "Placement in Nonpay Status. (Placement in Nonpay Status)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "450": {
+    "segment": "Negative Action",
+    "noa2_code": "450",
+    "description": "Suspension Not-to-exceed (date). (Suspension NTE (date))",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "452": {
+    "segment": "Negative Action",
+    "noa2_code": "452",
+    "description": "Suspension-Indefinite. (Suspension-Indefinite)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "460": {
+    "segment": "Neutral Action",
+    "noa2_code": "460",
+    "description": "Leave Without Pay Not-to-exceed (date). (LWOP NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "471": {
+    "noa2_code": "471",
+    "description": "Furlough. (Furlough)",
+    "start_date": "2/1/1982",
+    "end_date": "Present"
+  },
+  "472": {
+    "noa2_code": "472",
+    "description": "Furlough Not-to-exceed (date). (Furlough NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "473": {
+    "segment": "Neutral Action",
+    "noa2_code": "473",
+    "description": "Absent ?? Uniformed Services",
+    "start_date": "4/1/2010",
+    "end_date": "Present"
+  },
+  "480": {
+    "noa2_code": "480",
+    "description": "Sabbatical Not-to-exceed (date). (Sabbatical NTE (date))",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "500": {
+    "segment": "Positive Action",
+    "noa2_code": "500",
+    "description": "Conversion to Career Appointment. (Conv to Career Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "501": {
+    "segment": "Positive Action",
+    "noa2_code": "501",
+    "description": "Conversion to Career-Conditional Appointment. (Conv to Career-Cond Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "507": {
+    "noa2_code": "507",
+    "description": "Conversion to Emergency Appointment. (Conv to Emergency Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "508": {
+    "segment": "Positive Action",
+    "noa2_code": "508",
+    "description": "Conversion to Term Appointment Not-to-exceed (date). (Conv to Term Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "515": {
+    "segment": "Positive Action",
+    "noa2_code": "515",
+    "description": "Conversion to Appointment Not-to-exceed (date). (Conv to Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "520": {
+    "noa2_code": "520",
+    "description": "Conversion to Overseas Limited Appointment. (Conv to O/S Ltd Appt)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "522": {
+    "noa2_code": "522",
+    "description": "Conversion to Overseas Limited Appointment Not-to-exceed (date). (Conv to O/S Ltd Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "524": {
+    "noa2_code": "524",
+    "description": "Conversion to Appointment-Status Quo. (Conv to Appt-Status Quo)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "540": {
+    "noa2_code": "540",
+    "description": "Conversion to Reinstatement-Career. (Conv to Reins-Career)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "541": {
+    "noa2_code": "541",
+    "description": "Conversion to Reinstatement-Career-Conditional. (Conv to Reins-Career-Cond)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "542": {
+    "segment": "Positive Action",
+    "noa2_code": "542",
+    "description": "Conversion to Senior Executive Service Career Appointment. (Conv to SES Career Appt)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "543": {
+    "noa2_code": "543",
+    "description": "Conversion to Reinstatement-Senior Executive Service Career. (Conv to Reins-SES Career)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "546": {
+    "noa2_code": "546",
+    "description": "Conversion to Senior Executive Service Noncareer Appointment. (Conv to SES Noncareer Appt)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "548": {
+    "noa2_code": "548",
+    "description": "Conversion to Senior Executive Service Noncareer Appointment. (Conv to SES Noncareer Appt)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "549": {
+    "noa2_code": "549",
+    "description": "Conversion to Senior Executive Service Limited Emergency Appointment Not-to-exceed (date). (Conv to SES Ltd Emergency Appt NTE (date))",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "570": {
+    "segment": "Positive Action",
+    "noa2_code": "570",
+    "description": "Conversion to Excepted Appointment. (Conv to Exc Appt)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "571": {
+    "segment": "Positive Action",
+    "noa2_code": "571",
+    "description": "Conversion to Excepted Appointment Not-to-exceed (date). (Conv to Exc Appt NTE (date))",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "590": {
+    "noa2_code": "590",
+    "description": "Conversion to Provisional Appointment Not-to-exceed (date). (Conv to Provisional Appt NTE (date))",
+    "start_date": "4/1/1991",
+    "end_date": "Present"
+  },
+  "600": {
+    "noa2_code": "600",
+    "description": "Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "601": {
+    "noa2_code": "601",
+    "description": "ATC Certification.  Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "602": {
+    "noa2_code": "602",
+    "description": "ATC Transfer.  Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "603": {
+    "noa2_code": "603",
+    "description": "ATC Transfer NTE.  Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "604": {
+    "noa2_code": "604",
+    "description": "Termination of ATC Transfer NTE.  Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "605": {
+    "noa2_code": "605",
+    "description": "Extension of ATC Transfer NTE.  Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "606": {
+    "noa2_code": "606",
+    "description": "Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "5/1/2008",
+    "end_date": "Present"
+  },
+  "607": {
+    "noa2_code": "607",
+    "description": "Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "5/1/2008",
+    "end_date": "Present"
+  },
+  "608": {
+    "noa2_code": "608",
+    "description": "Reassignment Bonus.  Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/2003",
+    "end_date": "Present"
+  },
+  "609": {
+    "noa2_code": "609",
+    "description": "Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "610": {
+    "noa2_code": "610",
+    "description": "Code is for use by the Federal Aviation Administration (Department of Transportation) only.",
+    "start_date": "10/1/1998",
+    "end_date": "Present"
+  },
+  "614": {
+    "noa2_code": "614",
+    "description": "Change in Work Schedule NTE (date).  Code is for use by the Department of the Homeland Security (Transportation Security Administration) only.",
+    "start_date": "8/1/2011",
+    "end_date": "Present"
+  },
+  "615": {
+    "noa2_code": "615",
+    "description": "Phased Employment/Phased Retirement",
+    "start_date": "11/6/2014",
+    "end_date": "Present"
+  },
+  "616": {
+    "noa2_code": "616",
+    "description": "Opt out Phased Employment/Retirement",
+    "start_date": "11/6/2014",
+    "end_date": "Present"
+  },
+  "617": {
+    "noa2_code": "617",
+    "description": "Border Patrol Pay",
+    "start_date": "1/10/2016",
+    "end_date": "Present"
+  },
+  "702": {
+    "segment": "Positive Action",
+    "noa2_code": "702",
+    "description": "Promotion. (Promotion)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "703": {
+    "segment": "Positive Action",
+    "noa2_code": "703",
+    "description": "Promotion Not-to-exceed (date). (Promotion NTE (date))",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "713": {
+    "segment": "Negative Action",
+    "noa2_code": "713",
+    "description": "Change to Lower Grade, Level or Band.",
+    "start_date": "4/1/2006",
+    "end_date": "Present"
+  },
+  "721": {
+    "segment": "Neutral Action",
+    "noa2_code": "721",
+    "description": "Reassignment. (Reassignment)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "730": {
+    "noa2_code": "730",
+    "description": "Detail NTE (Date).",
+    "start_date": "12/1/2004",
+    "end_date": "Present"
+  },
+  "731": {
+    "noa2_code": "731",
+    "description": "Ext Detail NTE (Date).",
+    "start_date": "12/1/2004",
+    "end_date": "Present"
+  },
+  "732": {
+    "noa2_code": "732",
+    "description": "Term of Detail NTE (Date).",
+    "start_date": "12/1/2004",
+    "end_date": "Present"
+  },
+  "740": {
+    "segment": "Neutral",
+    "noa2_code": "740",
+    "description": "Position Change. (Psn Chg)",
+    "start_date": "2/1/1979",
+    "end_date": "Present"
+  },
+  "741": {
+    "noa2_code": "741",
+    "description": "Position Change Not-to-exceed (date). (Psn Chg NTE (date))",
+    "start_date": "2/1/1979",
+    "end_date": "Present"
+  },
+  "750": {
+    "noa2_code": "750",
+    "description": "Continuance Not-to-exceed (date). (Continuance NTE (date))",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "755": {
+    "noa2_code": "755",
+    "description": "Exception to RIF Release.  (Exception to RIF Release)",
+    "start_date": "1/1/1993",
+    "end_date": "Present"
+  },
+  "760": {
+    "segment": "Positive Action",
+    "noa2_code": "760",
+    "description": "Extension of Appointment Not-to-exceed (date). (Ext of Appt NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "762": {
+    "noa2_code": "762",
+    "description": "Extension of Senior Executive Service Limited Appointment Not-to-exceed (date). (Ext of SES Limited Appt NTE (date))",
+    "start_date": "7/1/1990",
+    "end_date": "Present"
+  },
+  "765": {
+    "segment": "Positive Action",
+    "noa2_code": "765",
+    "description": "Extension of Term Appointment Not-to-exceed (date). (Ext of Term Appt NTE (date))",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "769": {
+    "segment": "Positive Action",
+    "noa2_code": "769",
+    "description": "Extension of Promotion Not-to-exceed (date). (Ext of Promotion NTE (date))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "770": {
+    "noa2_code": "770",
+    "description": "Extension of Position Change Not-to-exceed (date). (Ext of Psn Chg NTE (date))",
+    "start_date": "1/1/1974",
+    "end_date": "Present"
+  },
+  "772": {
+    "noa2_code": "772",
+    "description": "Extension of Furlough Not-to-exceed (date). (Ext of Furlough NTE (date))",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "773": {
+    "segment": "Neutral Action",
+    "noa2_code": "773",
+    "description": "Extension of Leave Without Pay Not-to-exceed (date). (Ext of LWOP NTE (date))",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "780": {
+    "segment": "Neutral Action",
+    "noa2_code": "780",
+    "description": "Name Change from (previous name). (Name Chg from (previous name))",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "781": {
+    "segment": "Neutral Action",
+    "noa2_code": "781",
+    "description": "Change in Work Schedule. (Chg in Work Schedule)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "782": {
+    "segment": "Neutral Action",
+    "noa2_code": "782",
+    "description": "Change in Hours. (Chg in Hours)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "790": {
+    "segment": "Neutral Action",
+    "noa2_code": "790",
+    "description": "Realignment. (Realignment)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "792": {
+    "segment": "Neutral Action",
+    "noa2_code": "792",
+    "description": "Change in Duty Station. (Chg in Duty Station)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "800": {
+    "segment": "Neutral Action",
+    "noa2_code": "800",
+    "description": "Change in Data Element. (Chg in Data Element)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "803": {
+    "segment": "Neutral Action",
+    "noa2_code": "803",
+    "description": "Change in Retirement Plan. (Chg in Retirement Plan)",
+    "start_date": "9/1/1986",
+    "end_date": "Present"
+  },
+  "805": {
+    "noa2_code": "805",
+    "description": "Elected Full Living Benefits.  (Elected Full Living Benefits)",
+    "start_date": "7/1/1995",
+    "end_date": "Present"
+  },
+  "806": {
+    "noa2_code": "806",
+    "description": "Elected Partial Living Benefits.  (Elected Partial Living Benefits)",
+    "start_date": "7/1/1995",
+    "end_date": "Present"
+  },
+  "810": {
+    "noa2_code": "810",
+    "description": "Chg in Diff",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "815": {
+    "noa2_code": "815",
+    "description": "Recruitment Incentive",
+    "start_date": "5/1/2005",
+    "end_date": "Present"
+  },
+  "816": {
+    "segment": "Positive Action",
+    "noa2_code": "816",
+    "description": "Relocation Incentive",
+    "start_date": "5/1/2005",
+    "end_date": "Present"
+  },
+  "817": {
+    "noa2_code": "817",
+    "description": "Student Loan Repayment",
+    "start_date": "10/1/2003",
+    "end_date": "Present"
+  },
+  "818": {
+    "noa2_code": "818",
+    "description": "Administratively Uncontrollable Overtime. (AUO)",
+    "start_date": "3/1/1991",
+    "end_date": "Present"
+  },
+  "819": {
+    "segment": "Positive Action",
+    "noa2_code": "819",
+    "description": "Availability Pay. (Availability Pay)",
+    "start_date": "9/1/1994",
+    "end_date": "Present"
+  },
+  "825": {
+    "segment": "???",
+    "noa2_code": "825",
+    "description": "Separation Incentive. (Separation Incentive)",
+    "start_date": "12/1/1992",
+    "end_date": "Present"
+  },
+  "826": {
+    "noa2_code": "826",
+    "description": "Redesignation Bonus. Code is for use by the National Aeronautics and Space Administration only.",
+    "start_date": "6/1/2004",
+    "end_date": "Present"
+  },
+  "827": {
+    "segment": "Positive Action",
+    "noa2_code": "827",
+    "description": "Retention Incentive",
+    "start_date": "5/1/2005",
+    "end_date": "Present"
+  },
+  "840": {
+    "segment": "Positive Action",
+    "noa2_code": "840",
+    "description": "Individual Cash Award Rating Based. (Individual Cash Award RB)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "841": {
+    "segment": "Positive Action",
+    "noa2_code": "841",
+    "description": "Group Award ?? 5 U.S.C. Ch 45. (Group Award ?? 5 U.S.C. Ch 45)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "842": {
+    "noa2_code": "842",
+    "description": "Individual Suggestion/Invention Award. (Individual Suggestion/Invention Award)",
+    "start_date": "10/1/2000",
+    "end_date": "Present"
+  },
+  "843": {
+    "noa2_code": "843",
+    "description": "Group Suggestion/Invention Award. (Group Suggestion/Invention Award)",
+    "start_date": "10/1/2000",
+    "end_date": "Present"
+  },
+  "844": {
+    "noa2_code": "844",
+    "description": "Foreign Language Award. (Foreign Language Award)",
+    "start_date": "10/1/2000",
+    "end_date": "Present"
+  },
+  "845": {
+    "segment": "Positive Action",
+    "noa2_code": "845",
+    "description": "Travel Savings Incentive. (Travel Savings Incentive)",
+    "start_date": "10/1/2000",
+    "end_date": "Present"
+  },
+  "846": {
+    "segment": "Positive Action",
+    "noa2_code": "846",
+    "description": "Individual Time-Off Award. (Individual Time-Off Award)",
+    "start_date": "10/1/2000",
+    "end_date": "Present"
+  },
+  "847": {
+    "noa2_code": "847",
+    "description": "Group Time-Off Award. (Group Time-Off Award)",
+    "start_date": "10/1/2000",
+    "end_date": "Present"
+  },
+  "848": {
+    "noa2_code": "848",
+    "description": "Referral Bonus",
+    "start_date": "4/1/2001",
+    "end_date": "Present"
+  },
+  "849": {
+    "segment": "Positive Action",
+    "noa2_code": "849",
+    "description": "Individual Cash Award Not Rating Based. (Individual Cash Award NRB)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "855": {
+    "noa2_code": "855",
+    "description": "Head Nurse Pay. (Head Nurse Pay)",
+    "start_date": "1/1/1995",
+    "end_date": "Present"
+  },
+  "866": {
+    "segment": "Negative Action",
+    "noa2_code": "866",
+    "description": "Termination of Grade Retention. (Termination of Grade Retention)",
+    "start_date": "1/1/1982",
+    "end_date": "Present"
+  },
+  "867": {
+    "noa2_code": "867",
+    "description": "Interim Within Grade Increase. (Interim WGI)",
+    "start_date": "1/1/1992",
+    "end_date": "Present"
+  },
+  "868": {
+    "noa2_code": "868",
+    "description": "Termination of Interim Within Grade Increase. (Termination of Interim WGI)",
+    "start_date": "1/1/1992",
+    "end_date": "Present"
+  },
+  "871": {
+    "noa2_code": "871",
+    "description": "Exemplary Performance Award (Exemplary Performance Award). Code is for use by the Civilian Intelligence Personnel Management System (CIPMS) (Department of the Air Force, Department of the Army, Department of Defense, and Department of the Navy) only.",
+    "start_date": "2/1/1994",
+    "end_date": "Present"
+  },
+  "878": {
+    "noa2_code": "878",
+    "description": "Presidential Rank Award.",
+    "start_date": "4/1/2006",
+    "end_date": "Present"
+  },
+  "879": {
+    "noa2_code": "879",
+    "description": "Senior Executive Service Performance Award. (SES Performance Award)",
+    "start_date": "1/1/1989",
+    "end_date": "Present"
+  },
+  "880": {
+    "segment": "Neutral Action",
+    "noa2_code": "880",
+    "description": "Change in Tenure Group. (Chg in Tenure Group)",
+    "start_date": "7/1/1979",
+    "end_date": "Present"
+  },
+  "881": {
+    "segment": "Neutral Action",
+    "noa2_code": "881",
+    "description": "Federal Employees Group Life Insurance Change. (FEGLI Chg)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "882": {
+    "segment": "Flag",
+    "noa2_code": "882",
+    "description": "Change in Service Computation Date. (Chg in SCD)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "883": {
+    "segment": "Neutral",
+    "noa2_code": "883",
+    "description": "Change in Veteran Preference for reduction in force. (Chg in Vet Pref-RIF)",
+    "start_date": "11/1/1998",
+    "end_date": "Present"
+  },
+  "885": {
+    "noa2_code": "885",
+    "description": "Lump Sum Performance Payment Rating Based ?? In Lieu of Pay Adjustment. (Lump Sum Performance Payment RB-ILPA)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "886": {
+    "noa2_code": "886",
+    "description": "Lump Sum Performance Payment Rating Based ?? Not in Lieu of Pay Adjustment. (Lump Sum Performance Payment RB-NILPA)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "887": {
+    "noa2_code": "887",
+    "description": "Lump Sum Performance Payment Not Rating Based. (Lump Sum Performance Payment NRB)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "888": {
+    "segment": "Negative Action",
+    "noa2_code": "888",
+    "description": "Denial of Within Grade Increase. (Denial of WGI)",
+    "start_date": "7/1/1975",
+    "end_date": "Present"
+  },
+  "889": {
+    "noa2_code": "889",
+    "description": "Group Award ?? Other than 5 U.S.C. Ch 45. (Group Award ?? Other than 5 U.S.C. Ch 45)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "890": {
+    "segment": "Neutral Action",
+    "noa2_code": "890",
+    "description": "Miscellaneous Pay Adjustment. (Misc Pay Adj)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "891": {
+    "segment": "Positive Action",
+    "noa2_code": "891",
+    "description": "Performance-based Pay Increase Provided on Regular Cycle. (Reg Perf Pay)",
+    "start_date": "4/1/2006",
+    "end_date": "Present"
+  },
+  "892": {
+    "segment": "Positive Action",
+    "noa2_code": "892",
+    "description": "Performance-based Pay Increase Provided on Irregular Basis. (Irreg Perf Pay)",
+    "start_date": "4/1/2006",
+    "end_date": "Present"
+  },
+  "893": {
+    "segment": "Positive Action",
+    "noa2_code": "893",
+    "description": "Within-range Increase Provided on Regular Cycle. (Reg WRI)",
+    "start_date": "4/1/2006",
+    "end_date": "Present"
+  },
+  "894": {
+    "segment": "Neutral Action",
+    "noa2_code": "894",
+    "description": "General Market or Structural Pay Adjustment. (Gen Adj)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "896": {
+    "noa2_code": "896",
+    "description": "Group-based Pay Increase. (Group Inc)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "897": {
+    "noa2_code": "897",
+    "description": "Within-range Reduction. (Pay Reduct)",
+    "start_date": "1/1/2007",
+    "end_date": "Present"
+  },
+  "899": {
+    "noa2_code": "899",
+    "description": "Step Adjustment. (Step Adj)",
+    "start_date": "6/1/1972",
+    "end_date": "Present"
+  },
+  "903": {
+    "segment": "Neutral Action",
+    "noa2_code": "903",
+    "description": "If organization code is the only field changing, process Realignment or a Mass Data Element Change (MDEC). (NOA 790 or NOA 903). Review",
+    "start_date": "",
+    "end_date": ""
+  },
+  "910": {
+    "segment": "Neutral Action",
+    "noa2_code": "910",
+    "description": "??",
+    "start_date": "",
+    "end_date": ""
+  },
+  "915": {
+    "segment": "Neutral Action",
+    "noa2_code": "915",
+    "description": "??",
+    "start_date": "",
+    "end_date": ""
+  },
+  "916": {
+    "segment": "Neutral Action",
+    "noa2_code": "916",
+    "description": "??",
+    "start_date": "",
+    "end_date": ""
+  },
+  "917": {
+    "segment": "Neutral Action",
+    "noa2_code": "917",
+    "description": "??",
+    "start_date": "",
+    "end_date": ""
+  },
+  "919": {
+    "segment": "Neutral Action",
+    "noa2_code": "919",
+    "description": "??",
+    "start_date": "",
+    "end_date": ""
+  },
+  "976": {
+    "segment": "Retirement",
+    "noa2_code": "976",
+    "description": "Retirement preliminary disability",
+    "start_date": "",
+    "end_date": ""
+  }
+}
