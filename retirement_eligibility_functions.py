@@ -2,6 +2,28 @@ import math
 from datetime import datetime, timedelta
 import re
 
+"""
+Agency-specific service calculation date may enter into the calculation.
+For instance: 	SCRDDATE "Service Computation Retirement Date" is the base date on which retirement should be calculated.
+In an agency, this may differ from the EOD (Entrance on Duty Date) 
+based on knowledge and verification of prior government service prior to entering into the current agency. 
+"""
+
+"""
+IRS-specific codes? 
+RETCODE: 
+Retirement Code	
+enumerated character id/value
+1 - CSR
+2 - FICA
+4 - NONE
+6 - CSR 7.5%
+C - CSR & FICA
+E - CSR & FICA(LAW)
+K - FERS & FICA
+M - FERS & FICA(LAW)"
+"""
+
 
 class ServiceClasses:
     """
@@ -18,9 +40,13 @@ class ServiceClasses:
         }
 
 
+class RetirementSystem():
+    def __init__(self):
+        pass
+
 class EmployeeAttributes:
     birth_year: int
-    eod_date: datetime
+    scrd: datetime
     dob: datetime
 
     @staticmethod
@@ -32,26 +58,39 @@ class EmployeeAttributes:
         else:
             raise Exception('invalid date format')
 
-    def __init__(self, dob: str = None, eod_date: str = None, appointment_type: str = None,
-                 services_classes=[]):
-        """
+    @staticmethod
+    def pay_period_to_date(calendar_year: int = 1900, pay_period: int = 1 ):
+        return calendar_year + (pay_period / 27)
 
-        :type eod_date: datetime
-        :type dob: datetime
+    @staticmethod
+    def min_employment_age():
+        return 16
 
-        """
+    def __init__(self, dob: str = None, scrd: str = None
+                 , basis_date: datetime = None
+                 , appointment_type: str = None
+                 , retirement_system: RetirementSystem = None
+                 , services_classes=[]):
+        # The basis date is the effective date at which the employee age, length-of-service, MRA, eligibility is to be calculated
+
+        # This date will change based on the time period being simulated.  For instance, if an employee quits in a given year,
+        #   we need to know if that employee was eligible for a retirement benefit at that particular time in order to weight
+        #   that as a non-zero opportunity cost that would have had an effect on the decision to quit.
+
+        self.basis_date = basis_date if basis_date is not None else datetime.now()
         days_in_months = [31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         self.dob = self.to_date(dob)
 
-        self.eod_date = self.to_date(eod_date)
-        self.retirement_system = FERS if self.eod_date >= datetime(1987, 1, 1) else CSRS
+        self.scrd = self.to_date(scrd)
+        self.retirement_system = FERS if self.scrd >= datetime(1987, 1, 1) else CSRS
         self.appointment_type = appointment_type
 
-        self.years_of_service = math.floor(((datetime.now() - self.eod_date).days / 365.25))
-        self.age = math.floor(((datetime.now() - self.dob).days / 365.25))
-        self.age_years = math.floor(((datetime.now() - self.dob).days / 365.25))
+        self.years_of_service = math.floor(((self.basis_date - self.scrd).days / 365.25))
+        self.age = math.floor(((self.basis_date - self.dob).days / 365.25))
+        self.age_years = math.floor(((self.basis_date - self.dob).days / 365.25))
         self.age_months = math.floor(
-            (((datetime.now() - self.dob).days / 365.25) - math.floor((datetime.now() - self.dob).days / 365.25)) * 12)
+            (((self.basis_date - self.dob).days / 365.25) - math.floor(
+                (self.basis_date - self.dob).days / 365.25)) * 12)
         self.birth_year = self.dob.year
 
         self.minimum_retirement_age = FERS.min_retirement_age(self)
@@ -65,20 +104,22 @@ class EmployeeAttributes:
     def _json(self):
         return {
             "dob": self.dob.strftime("%Y-%m-%d"),
-            "eod_date": self.eod_date.strftime("%Y-%m-%d"),
+            "scrd": self.scrd.strftime("%Y-%m-%d"),
             "years_of_service": self.years_of_service,
             "age": self.age,
             "birth_year": self.birth_year,
             "minimum_retirement_age": self.minimum_retirement_age,
-            "meets_minimum_age_criteria": self.meets_minimum_age_criteria
+            "meets_minimum_age_criteria": self.meets_minimum_age_criteria,
+            "basis_date": self.basis_date
         }
 
 
 ## FERS
-class FERS:
+class FERS(RetirementSystem):
     """
         https://www.opm.gov/retirement-services/fers-information/eligibility
     """
+
     @classmethod
     def __str__(cls) -> str:
         return 'FERS'
@@ -126,43 +167,37 @@ class FERS:
             50	    20
             Any Age	25
         """
-        print(emp.years_of_service, emp.age, "\n-----------------")
         if emp.years_of_service < 20 or emp.age < 36:
             # minimum legal employment age plus 20 years
-            print("fail case 1")
             return False
         if emp.years_of_service >= 20 and emp.age >= 50:
             # age 50 and older with 20 or more years of service
-            print("case 2 age 50 and older with 20 or more years of service")
             return True
-        elif emp.years_of_service >= 25 and emp.age >= 25 + 16:
+        elif emp.years_of_service >= 25 and emp.age >= (25 + EmployeeAttributes.min_employment_age()):
             # any age with 25 or more years of service
-            print("case 3: any age with 25 or more years of service")
             return True
         else:
-            print("fall out")
             return False
 
     @staticmethod
     def deferred_retirement_eligibility(emp: EmployeeAttributes) -> bool:
         """
-        Deferred Retirement
+            Deferred Retirement
 
-        If you leave Federal service before you meet the age and service requirements
-        for an immediate retirement benefit, you may be eligible for deferred retirement benefits.
-        To be eligible, you must have completed at least 5 years of creditable civilian service.
-        You may receive benefits when you reach one of the following ages:
+            If you leave Federal service before you meet the age and service requirements
+            for an immediate retirement benefit, you may be eligible for deferred retirement benefits.
+            To be eligible, you must have completed at least 5 years of creditable civilian service.
+            You may receive benefits when you reach one of the following ages:
 
-            Eligibility Information
-            Age	Years of Service
-            62	5
-            MRA	30
-            MRA	10
+                Eligibility Information
+                Age	Years of Service
+                62	5
+                MRA	30
+                MRA	10
         """
         return (emp.age >= 62 and emp.years_of_service >= 5) \
                or (emp.meets_minimum_age_criteria and emp.years_of_service >= 30) \
                or (emp.meets_minimum_age_criteria and emp.years_of_service >= 10)
-        return emp.years_of_service >= 5
 
     @staticmethod
     def disability_retirement_eligibility(emp: EmployeeAttributes) -> bool:
@@ -178,8 +213,7 @@ class FERS:
         :param emp:
         :return: boolean True if employee meets qualifications and false otherwise
         """
-        return (datetime.now() - emp.eod_date).days >= (1.5 * 365.25)  # 18 months
-
+        return (emp.basis_date - emp.scrd).days >= (1.5 * 365.25)  # 18 months
 
     @staticmethod
     def immediate_retirement_benefit(emp: EmployeeAttributes) -> float:
@@ -196,26 +230,25 @@ class FERS:
             MRA	10
             MRA = minimum retirement age
         """
-
         if emp.meets_minimum_age_criteria:
             if 10 <= emp.years_of_service < 30:
                 adjusted_retirement_benefit = 1.0 - ((62.0 - float(emp.age)) * 0.05)
-                print("condition 1.A: age -> {} , reduction {}".format(emp.age, (62.0 - float(emp.age)) * 0.05))
+                # print("condition 1.A: age -> {} , reduction {}".format(emp.age, (62.0 - float(emp.age)) * 0.05))
                 return min(adjusted_retirement_benefit, 1.0)
             elif emp.years_of_service >= 30:
-                print("condition 1.B: age -> {}".format(emp.age))
+                # print("condition 1.B: age -> {}".format(emp.age))
                 return 1.0
             else:
                 return 0.0
         elif (emp.years_of_service >= 20 and emp.age >= 60) or (emp.years_of_service >= 5 and emp.age >= 62):
-            print("condition TWO")
+            # print("condition TWO")
             return 1.0
         else:
-            print("condition THREE")
+            # print("condition THREE")
             return 0.0
 
 
-class CSRS:
+class CSRS(RetirementSystem):
     """
     https://www.opm.gov/retirement-services/csrs-information/
 
@@ -261,6 +294,7 @@ class CSRS:
     Any Age	25
     """
 
+    @staticmethod
     def early_retirement_eligibility(emp: EmployeeAttributes) -> bool:
         """Special Provision Retirement
             Special Requirements: You must retire under special provisions for:
@@ -276,7 +310,7 @@ class CSRS:
             * ONLY air traffic controllers can retire at any age with 25 years of service as an air traffic controller.
         """
         return (emp.years_of_service >= 20 and emp.age >= 50) or \
-               (emp.years_of_service >= 25 and emp.age >= (16 + 25))
+            (emp.years_of_service >= 25 and emp.age >= (EmployeeAttributes.min_employment_age() + 25))
 
     @staticmethod
     def discontinued_service_retirement(emp: EmployeeAttributes) -> bool:
@@ -288,13 +322,14 @@ class CSRS:
         Special Requirements: Your separation is involuntary and not a removal for misconduct or delinquency.
         """
         return (emp.years_of_service >= 20 and emp.age >= 50) or \
-               (emp.years_of_service >= 25 and emp.age >= (16 + 25))
+            (emp.years_of_service >= 25 and emp.age >= (EmployeeAttributes.min_employment_age() + 25))
 
     @staticmethod
     def special_provision(emp: EmployeeAttributes) -> bool:
         return (emp.years_of_service >= 20 and emp.age >= 50) \
-               or (emp.years_of_service >= 25 and emp.age >= (16 + 25))
+            or (emp.years_of_service >= 25 and emp.age >= (EmployeeAttributes.min_employment_age() + 25))
 
+    @staticmethod
     def disability_retirement(emp: EmployeeAttributes):
         """
         Disability
@@ -305,4 +340,5 @@ class CSRS:
             are qualified. You must have been disabled prior to retirement and the disability should be expected to
             last for more than one year.
         """
-        return emp.years_of_service >= 5 and emp.age >= (16 + 5)  ## min employment age plus five years
+        # min employment age plus five years
+        return emp.years_of_service >= 5 and emp.age >= (EmployeeAttributes.min_employment_age() + 5)
