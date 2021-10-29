@@ -86,6 +86,7 @@ class EmployeeAttributes:
         self.appointment_type = appointment_type
 
         self.years_of_service = math.floor(((self.basis_date - self.scrd).days / 365.25))
+        self.days_of_service = (self.basis_date - self.scrd).days
         self.age = math.floor(((self.basis_date - self.dob).days / 365.25))
         self.age_years = math.floor(((self.basis_date - self.dob).days / 365.25))
         self.age_months = math.floor(
@@ -110,7 +111,8 @@ class EmployeeAttributes:
             "birth_year": self.birth_year,
             "minimum_retirement_age": self.minimum_retirement_age,
             "meets_minimum_age_criteria": self.meets_minimum_age_criteria,
-            "basis_date": self.basis_date
+            "basis_date": self.basis_date,
+            "days_of_service": self.days_of_service
         }
 
 
@@ -213,7 +215,7 @@ class FERS(RetirementSystem):
         :param emp:
         :return: boolean True if employee meets qualifications and false otherwise
         """
-        return (emp.basis_date - emp.scrd).days >= (1.5 * 365.25)  # 18 months
+        return emp.days_of_service >= (1.5 * 365.25)  # 18 months
 
     @staticmethod
     def immediate_retirement_benefit(emp: EmployeeAttributes) -> float:
@@ -277,7 +279,7 @@ class CSRS(RetirementSystem):
         return 'CSRS'
 
     @staticmethod
-    def retirement_eligibility(emp: EmployeeAttributes):
+    def retirement_eligible(emp: EmployeeAttributes):
         return (emp.years_of_service >= 5 and emp.age >= 62) \
                or (emp.years_of_service >= 25 and emp.age >= 60) \
                or (emp.years_of_service >= 30 and emp.age >= 55)
@@ -334,7 +336,7 @@ class CSRS(RetirementSystem):
         """
         Disability
         Age	Years of Service
-        Any Age	5
+        Any Age	1.5
         Special Requirements: You must be disabled for useful and efficient service in your current position and any other
             vacant position at the same grade or pay level within your commuting area and current agency for which you
             are qualified. You must have been disabled prior to retirement and the disability should be expected to

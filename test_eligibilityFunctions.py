@@ -7,12 +7,13 @@ from pathlib import Path
 from datetime import datetime
 from retirement_eligibility_functions import EmployeeAttributes, FERS, CSRS
 
+
 class TestEligibilityFunctions(TestCase):
     min_retirement_age: List
 
     def setUp(self) -> None:
         """
-        min_retirement_age
+        LOAD min_retirement_age
         """
         self.min_retirement_age = []
         p = Path('../swat/retirement-eligibility/fers_min_retirement_age.csv')
@@ -27,7 +28,7 @@ class TestEligibilityFunctions(TestCase):
                 self.min_retirement_age.append([emp, int(r[3]), int(r[4]), r[2]])
 
         """
-        immediate retirement benefit
+        LOAD immediate retirement benefit
         """
         self.test_immediate_retirement_benefit = []
         p = Path('../swat/retirement-eligibility/fers_immediate_retirement_benefit.csv')
@@ -41,6 +42,9 @@ class TestEligibilityFunctions(TestCase):
                 emp = EmployeeAttributes(r[2], r[1])
                 self.test_immediate_retirement_benefit.append([emp, float(r[3]), r[4]])
 
+        """
+        LOAD early retirement
+        """
         self.test_early_retirement_data = []
         p = Path('../swat/retirement-eligibility/fers_early_retirement_test_cases.csv')
         with io.open(p, 'r', encoding='utf-8', errors='ignore') as infile:
@@ -49,43 +53,64 @@ class TestEligibilityFunctions(TestCase):
             for r in reader:
                 emp = EmployeeAttributes(r[2], r[1])
                 self.test_early_retirement_data.append([emp, True if r[3] == '1' else False, r[3], "tc{}".format(r[4])])
-
+        """
+        LOAD deferred retirement eligibility
+        """
         self.fers_deferred_retirement_eligibility_cases = []
         p = Path('../swat/retirement-eligibility/fers_deferred_retirement_eligibility_cases.csv')
         with io.open(p, 'r', encoding='utf-8', errors='ignore') as infile:
             reader = csv.reader(infile)
             self.header = next(reader)
-            for r in reader:
-                self.fers_deferred_retirement_eligibility_cases.append([])
 
+            for r in reader:
+                emp = EmployeeAttributes(r[1], r[0])
+                res = int(r[2])
+                test_case = r[3]
+                self.fers_deferred_retirement_eligibility_cases.append([emp, res, test_case])
+        """
+        LOAD disability retirement eligibility
+        """
         # we will manufacture this data randomly since the only criteria is years of service
         self.fers_disability_retirement_eligibility_cases = []
         import random
-        ages = [20, 30, 40, 50 , 57, 60 , 62, 63, 70]
-        tos = [int(1.4 * 365.25), int(1.5 * 366) , int(1.6 * 365.25) ]
-        res = [0,1,1]
+        ages = [20, 30, 40, 50, 57, 60, 62, 63, 70]
+        tos = [int(1.4 * 365.25), int(1.5 * 366), int(1.6 * 365.25)]
+        expected_values = [False, True, True]
         for i in range(len(ages)):
-            dob = datetime.now() - timedelta(days=int(ages[i]*365.25))
-            for j in range(3):
-                scrddate = datetime.now()-timedelta(days=tos[j])
-                emp = EmployeeAttributes(dob.strftime('%Y%m%d'),scrddate.strftime('%Y%m%d'))
-                self.fers_disability_retirement_eligibility_cases.append([emp,res[j]])
+            dob = datetime.now() - timedelta(days=int(ages[i] * 365.25))
+            for j in range(len(expected_values)):
+                scrddate = datetime.now() - timedelta(days=tos[j])
+                emp = EmployeeAttributes(dob.strftime('%Y%m%d'), scrddate.strftime('%Y%m%d'))
+                trec=[emp, expected_values[j], 'tc{}'.format(i+1)]
+                self.fers_disability_retirement_eligibility_cases.append(trec)
 
-        p = Path('../swat/retirement-eligibility/fers_disability_retirement_eligibility_cases.csv')
-        with io.open(p, 'r', encoding='utf-8', errors='ignore') as infile:
-            reader = csv.reader(infile)
-            self.header = next(reader)
-            for r in reader:
-                self.fers_disability_retirement_eligibility_cases.append([])
-
+        #
+        # p = Path('../swat/retirement-eligibility/fers_disability_retirement_eligibility_cases.csv')
+        # with io.open(p, 'r', encoding='utf-8', errors='ignore') as infile:
+        #     reader = csv.reader(infile)
+        #     self.header = next(reader)
+        #     for r in reader:
+        #         self.fers_disability_retirement_eligibility_cases.append([])
+        #
+        #      $$$     $$$
+        #     $   $   $   $
+        #     $   $    $
+        #     $         $
+        #     $   $      $
+        #     $   $   $   $
+        #      $$$     $$$
+        #
         # CSRS
-        self.csrs_retirement_eligibility_cases = []
+        self.csrs_retirement_eligible_cases = []
         p = Path('../swat/retirement-eligibility/csrs_retirement_eligibility_cases.csv')
         with io.open(p, 'r', encoding='utf-8', errors='ignore') as infile:
             reader = csv.reader(infile)
             self.header = next(reader)
             for r in reader:
-                self.csrs_retirement_eligibility_cases.append([])
+                emp = EmployeeAttributes(r[1]. r[0])
+                expected_value = True if int(r[2]) == 1 else 0
+                test_case = r[3]
+                self.csrs_retirement_eligible_cases.append([emp, expected_value, test_case])
 
         self.csrs_early_retirement_eligibility_cases = []
         p = Path('../swat/retirement-eligibility/csrs_early_retirement_eligibility_cases.csv')
@@ -119,7 +144,7 @@ class TestEligibilityFunctions(TestCase):
             self.assertEqual(expected_value, min_retirement_age_val)
 
     def test_fers_immediate_retirement_benefit(self):
-        if True:
+        if False:
             test_case = {'dob': '1966-08-07', 'scrd': '1991-09-01', 'years_of_service': 30, 'age': 55,
                          'birth_year': 1966}
             emp = EmployeeAttributes(test_case['dob'], test_case['scrd'])
@@ -146,16 +171,33 @@ class TestEligibilityFunctions(TestCase):
             self.assertEqual(expected_value, predicted_value)
 
     def test_fers_deferred_retirement_eligibility(self):
-        self.assertTrue(1 == 1)
-
+        # self.assertTrue(1 == 1)
+        # result	test_case
+        for r in self.fers_deferred_retirement_eligibility_cases:
+            emp = r[0]
+            predicted_value = FERS.deferred_retirement_eligibility(emp)
+            expected_value = True if r[1] == 1 else False
+            test_case = r[2]
+            self.assertEqual(expected_value, predicted_value)
 
     def test_fers_disability_retirement_eligibility(self):
-        self.assertTrue(1 == 1)
+        for r in self.fers_disability_retirement_eligibility_cases:
+            emp = r[0]
+            expected_value = r[1]
+            test_case = r[2]
+            predicted_value = FERS.disability_retirement_eligibility(emp)
+            if expected_value != predicted_value: print(test_case)
+            self.assertEqual(expected_value, predicted_value)
 
-    # CSRS
-
+    #
     def test_csrs_retirement_eligibility(self):
-        self.assertTrue(1 == 1)
+        for r in self.csrs_retirement_eligible_cases:
+            emp = r[0]
+            expected_value = r[1]
+            test_case = r[2]
+            predicted_value = CSRS.retirement_eligible(emp)
+            self.assertEqual(expected_value, predicted_value)
+
 
     def test_csrs_early_retirement_eligibility(self):
         self.assertTrue(1 == 1)
@@ -165,4 +207,3 @@ class TestEligibilityFunctions(TestCase):
 
     def test_discontinued_service_retirement(self):
         self.assertTrue(1 == 1)
-
