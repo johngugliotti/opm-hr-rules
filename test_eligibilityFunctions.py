@@ -107,7 +107,7 @@ class TestEligibilityFunctions(TestCase):
             reader = csv.reader(infile)
             self.header = next(reader)
             for r in reader:
-                emp = EmployeeAttributes(r[1]. r[0])
+                emp = EmployeeAttributes(r[1], r[0])
                 expected_value = True if int(r[2]) == 1 else 0
                 test_case = r[3]
                 self.csrs_retirement_eligible_cases.append([emp, expected_value, test_case])
@@ -118,7 +118,10 @@ class TestEligibilityFunctions(TestCase):
             reader = csv.reader(infile)
             self.header = next(reader)
             for r in reader:
-                self.csrs_early_retirement_eligibility_cases.append([])
+                emp = EmployeeAttributes(r[1], r[0])
+                expected_value = True if int(r[2]) == 1 else False
+                test_case = r[3]
+                self.csrs_early_retirement_eligibility_cases.append([emp, expected_value, test_case])
 
         self.csrs_special_provision_cases = []
         p = Path('../swat/retirement-eligibility/csrs_special_provision_cases.csv')
@@ -189,21 +192,48 @@ class TestEligibilityFunctions(TestCase):
             if expected_value != predicted_value: print(test_case)
             self.assertEqual(expected_value, predicted_value)
 
-    #
-    def test_csrs_retirement_eligibility(self):
+    #CSRS
+
+    def test_csrs_retirement_eligible(self):
         for r in self.csrs_retirement_eligible_cases:
             emp = r[0]
             expected_value = r[1]
             test_case = r[2]
             predicted_value = CSRS.retirement_eligible(emp)
+            print(emp._json)
+            print(test_case, expected_value, predicted_value)
             self.assertEqual(expected_value, predicted_value)
 
-
     def test_csrs_early_retirement_eligibility(self):
-        self.assertTrue(1 == 1)
-
+        for r in self.csrs_early_retirement_eligibility_cases:
+            emp = r[0]
+            expected_value = r[1]
+            test_case = r[2]
+            predicted_value = CSRS.early_retirement_eligibility(emp)
+            self.assertEqual(expected_value, predicted_value)
+    """
+    include additional information in the employeee object which is to be derived from NOA codes:
+    - onboarding NOA code or other contextual information that indicates the type of hire
+    - this may only apply as a distinctive function for FAA (air traffic controllers who can retire at any age with 25 y.o.s.
+    """
     def test_csrs_special_provision(self):
-        self.assertTrue(1 == 1)
+        for r in self.csrs_early_retirement_eligibility_cases:
+            emp = r[0]
+            expected_value = r[1]
+            test_case = r[2]
+            predicted_value = CSRS.early_retirement_eligibility(emp)
+            self.assertEqual(expected_value, predicted_value)
 
+    """
+    Special Requirements: Your separation is involuntary and not a removal for misconduct or delinquency.
+        NOA code or additional exit context may be a factor here
+        This will require the addition of more information to the employee object
+    """
     def test_discontinued_service_retirement(self):
-        self.assertTrue(1 == 1)
+        for r in self.csrs_early_retirement_eligibility_cases:
+            emp = r[0]
+            expected_value = r[1]
+            test_case = r[2]
+            predicted_value = CSRS.early_retirement_eligibility(emp)
+            self.assertEqual(expected_value, predicted_value)
+

@@ -267,17 +267,17 @@ class CSRS(RetirementSystem):
     To be eligible, you must have at least 5 years of creditable civilian service and be age 62.
     """
 
+
+    @classmethod
+    def __str__(cls) -> str:
+        return 'CSRS'
+
     """
     Age	Years of Service
     62	5
     60	20
     55	30
     """
-
-    @classmethod
-    def __str__(cls) -> str:
-        return 'CSRS'
-
     @staticmethod
     def retirement_eligible(emp: EmployeeAttributes):
         return (emp.years_of_service >= 5 and emp.age >= 62) \
@@ -305,7 +305,6 @@ class CSRS(RetirementSystem):
                 nuclear materials courier
                 supreme Court Police
                 Capitol Police
-
             Age	Years of Service
             50	20
             Any Age *	25
@@ -313,7 +312,9 @@ class CSRS(RetirementSystem):
         """
         return (emp.years_of_service >= 20 and emp.age >= 50) or \
             (emp.years_of_service >= 25 and emp.age >= (EmployeeAttributes.min_employment_age() + 25))
-
+    """
+    NOA2 codes may be a factor here in order to determine the type of dismissal
+    """
     @staticmethod
     def discontinued_service_retirement(emp: EmployeeAttributes) -> bool:
         """
@@ -322,10 +323,14 @@ class CSRS(RetirementSystem):
         50	20
         Any Age	25
         Special Requirements: Your separation is involuntary and not a removal for misconduct or delinquency.
+        *** NOA code or additional exit context may be a factor here
         """
         return (emp.years_of_service >= 20 and emp.age >= 50) or \
             (emp.years_of_service >= 25 and emp.age >= (EmployeeAttributes.min_employment_age() + 25))
 
+    """
+    
+    """
     @staticmethod
     def special_provision(emp: EmployeeAttributes) -> bool:
         return (emp.years_of_service >= 20 and emp.age >= 50) \
@@ -342,5 +347,4 @@ class CSRS(RetirementSystem):
             are qualified. You must have been disabled prior to retirement and the disability should be expected to
             last for more than one year.
         """
-        # min employment age plus five years
-        return emp.years_of_service >= 5 and emp.age >= (EmployeeAttributes.min_employment_age() + 5)
+        return emp.days_of_service >= (1.5 * 365.25) and emp.age >= (EmployeeAttributes.min_employment_age() + 2)
