@@ -44,6 +44,7 @@ class RetirementSystem():
     def __init__(self):
         pass
 
+
 class EmployeeAttributes:
     birth_year: int
     scrd: datetime
